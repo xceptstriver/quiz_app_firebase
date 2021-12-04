@@ -5,6 +5,9 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home from '../containers/Home';
 import SignIn from '../containers/SignIn';
 import SignUp from '../containers/SignUp';
+import CreateQuiz from '../containers/CreateQuiz';
+import AddQuestion from '../containers/AddQuestion';
+import PlayQuiz from '../containers/PlayQuiz';
 import auth from '@react-native-firebase/auth';
 
 const AppStack = createStackNavigator();
@@ -37,7 +40,14 @@ const Routes = () => {
   };
 
   const HomeStackNavigator = () => {
-    return <AppStack.Screen name="Home" component={Home} />;
+    return (
+      <>
+        <AppStack.Screen name="Home" component={Home} />
+        <AppStack.Screen name="CreateQuiz" component={CreateQuiz} />
+        <AppStack.Screen name="AddQuestion" component={AddQuestion} />
+        <AppStack.Screen name="PlayQuiz" component={PlayQuiz} />
+      </>
+    );
   };
 
   return (
